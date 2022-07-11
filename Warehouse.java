@@ -5,8 +5,10 @@ public class Warehouse {
     private int price;
     private int stock;
     private Map<String,Integer> productInWarehouse;
+    private Map<String,Integer> stockBalance;
     public Warehouse(){
         this.productInWarehouse = new HashMap<>();
+        this.stockBalance = new HashMap<>();
     }
     public void addProduct(String product,int price,int stock){
         //this.product = product;
@@ -14,6 +16,23 @@ public class Warehouse {
         this.stock = stock;
         //this.productInWarehouse = new HashMap<>();
         this.productInWarehouse.put(product, price);
+        this.stockBalance.put(product, stock);
+    }
+    public boolean take(String product){
+        //int Balance = this.stockBalance.get(product);
+        int Balance = this.stockBalance.get(product);
+        Balance--;
+        this.stockBalance.put(product, Balance);
+        if(this.stockBalance.get(product)<=0){
+            return false;
+        } return true;
+
+    }
+    public int stock(String product){
+        if(this.stockBalance.containsKey(product)){
+            return this.stockBalance.get(product);
+        }
+        return 0;
     }
     public void products(){
         for(String producto : this.productInWarehouse.keySet()){
