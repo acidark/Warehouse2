@@ -21,6 +21,14 @@ public class Main {
         for(String product : fabrica.products()){
             System.out.println(product);
         }
+        Item newItem = new Item("pollo", 3, 10);
+        System.out.println(newItem.price());
+        newItem.increseQuantity();
+        System.out.println(newItem.price());
+        ShoppingCart newCart = new ShoppingCart();
+        newCart.add("carne", 15);
+        newCart.add("pescado", 20);
+        System.out.println(newCart.price());
 
     }
 }
