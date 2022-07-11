@@ -27,8 +27,8 @@ public class Warehouse {
         }
         if(this.stockBalance.get(product)>0){
             int balance = this.stockBalance.get(product);
-            balance--;
-            this.stockBalance.put(product, balance);
+            //balance--;
+            this.stockBalance.put(product, balance--);
             return true;
         } 
         this.stockBalance.remove(product);
@@ -48,10 +48,11 @@ public class Warehouse {
     }
 
     public int stock(String product){
-        if(this.stockBalance.containsKey(product)){
-            return this.stockBalance.get(product);
-        }
-        return 0;
+        //if(this.stockBalance.containsKey(product)){
+        //    return this.stockBalance.get(product);
+        //}
+        //return 0;
+        return this.stockBalance.getOrDefault(product, 0);
     }
     /*public void products(){
         for(String producto : this.productInWarehouse.keySet()){
@@ -59,10 +60,11 @@ public class Warehouse {
         }
     }*/
     public int price(String product){
-        if(!(this.productInWarehouse.containsKey(product))){
-            return -99;
-        }
-        return this.productInWarehouse.get(product);
+        return this.productInWarehouse.getOrDefault(product, -99);
+        //if(!(this.productInWarehouse.containsKey(product))){
+        //    return -99;
+        //}
+        //return this.productInWarehouse.get(product);
     }
 
     /*public boolean equals(Object object){

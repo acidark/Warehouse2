@@ -8,10 +8,11 @@ public class ShoppingCart {
         this.cart = new HashMap<>();
     }
     public void add(String product,int price){
+        this.cart.putIfAbsent(product, new Item(product, 0, price));
         //Item newItem = new Item(product, 0, price);
-        if(!(this.cart.containsKey(product))){
-            this.cart.put(product,new Item(product, 0, price) );
-        }
+        //if(!(this.cart.containsKey(product))){
+        //    this.cart.put(product,new Item(product, 0, price) );
+        //}
         //this.cart.put(product,newItem);
         this.cart.get(product).increaseQuantity();
 
