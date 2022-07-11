@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 public class Warehouse {
     private String product;
     private int price;
@@ -28,17 +29,21 @@ public class Warehouse {
         } return true;
 
     }
+    public Set<String> products(){
+        return this.stockBalance.keySet();
+    }
+
     public int stock(String product){
         if(this.stockBalance.containsKey(product)){
             return this.stockBalance.get(product);
         }
         return 0;
     }
-    public void products(){
+    /*public void products(){
         for(String producto : this.productInWarehouse.keySet()){
             System.out.println(producto);
         }
-    }
+    }*/
     public int price(String product){
         if(!(this.productInWarehouse.containsKey(product))){
             return -99;

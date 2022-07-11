@@ -16,6 +16,7 @@ public class Main {
         System.out.println(fabrica.stock("coffeee"));
         System.out.println(fabrica.take("coffeee"));
         System.out.println(fabrica.take("coffeee"));
+        System.out.println(fabrica.products());
 
     }
 }
