@@ -7,6 +7,9 @@ public class Main {
         Warehouse fabrica = new Warehouse();
         fabrica.addProduct("milk", 10, 10);
         fabrica.addProduct("coffeee", 5, 15);
+        fabrica.products();
+        System.out.println(fabrica.price("coffeee"));
         System.out.println(fabrica.price("milk"));
+
     }
 }
