@@ -1,5 +1,4 @@
-
-
+import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
@@ -21,9 +20,9 @@ public class Main {
         /*for(String product : fabrica.products()){
             System.out.println(product);
         }*/
-        Item newItem = new Item("pollo", 3, 10);
+        /*Item newItem = new Item("pollo", 3, 10);
         System.out.println(newItem.price());
-        newItem.increseQuantity();
+        newItem.increaseQuantity();
         System.out.println(newItem.price());
         ShoppingCart newCart = new ShoppingCart();
         newCart.add("carne", 15);
@@ -31,7 +30,15 @@ public class Main {
         System.out.println(newCart.price());
         newCart.print();
         newCart.add("carne", 15);
-        newCart.print();
+        newCart.print();*/
+        Warehouse newWarehouse = new Warehouse();
+        newWarehouse.addProduct("pasta", 10, 20);
+        newWarehouse.addProduct("cafe", 10, 22);
+        newWarehouse.addProduct("ramen", 22, 33);
+        Scanner scanner = new Scanner(System.in);
+        Store store = new Store(newWarehouse, scanner);
+        store.shop("hugo");
+        System.out.println(newWarehouse.stock("cafe"));
 
     }
 }

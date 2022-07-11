@@ -12,7 +12,7 @@ public class Item {
         return this.qty*this.unitPrice;
     }
 
-    public void increseQuantity(){
+    public void increaseQuantity(){
         this.qty++;
     }
     public String toString(){

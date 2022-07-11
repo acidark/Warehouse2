@@ -2,18 +2,18 @@ import java.util.HashMap;
 import java.util.Map;
 public class ShoppingCart {
     private Map<String,Item> cart;
-    private Item newItem;
+    //private Item newItem;
 
     public ShoppingCart(){
         this.cart = new HashMap<>();
     }
     public void add(String product,int price){
-        this.newItem = new Item(product, 0, price);
+        //Item newItem = new Item(product, 0, price);
         if(!(this.cart.containsKey(product))){
-            this.cart.put(product, this.newItem );
+            this.cart.put(product,new Item(product, 0, price) );
         }
         //this.cart.put(product,newItem);
-        this.cart.get(product).increseQuantity();
+        this.cart.get(product).increaseQuantity();
 
     }
     public int price(){
